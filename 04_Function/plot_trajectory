@@ -1,0 +1,22 @@
+#
+# Plot the trajectory of a ballistic object
+#
+
+set multiplot layout 3, 1
+set margin 2
+
+#- Trajectory plot
+set title 'Trajectory'
+plot 'ballistic2.log' u 2:3 with lines
+
+#- Vertical velocity plot with time
+set title 'Vertical velocity'
+plot 'ballistic2.log' u 1:5 with lines
+
+#- Vertical acceleration plot with time
+set title 'Vertical acceleration'
+plot 'ballistic2.log' u 1:7 with lines
+
+unset multiplot
+
+pause mouse keypress
